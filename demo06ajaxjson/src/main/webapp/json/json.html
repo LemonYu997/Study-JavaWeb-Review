@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="pragma" content="no-cache" />
+		<meta http-equiv="cache-control" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			// json的定义
+			var jsonObj = {
+				"key1": 12,
+				"key2": "abc",
+				"key3": true,
+				"key4": [11, "arr", false],
+				"key5": {
+					"key5_1": 551,
+					"key5_2": "key5_2_value"
+				},
+				"key6": [{
+					"key6_1_1": 6611,
+					"key6_1_2": "key6_1_2_value"
+				},{
+					"key6_2_1": 6621,
+					"key6_2_2": "key6_2_2_value"
+				}]
+			};
+			console.log(typeof(jsonObj));	//object Json就是一个对象
+
+			// json的访问
+			console.log(jsonObj.key1);	//12
+			console.log(jsonObj.key2);	//abc
+			console.log(jsonObj.key3);	//true
+			console.log(jsonObj.key4);	//[11, 'arr', false]
+			//对数组进行遍历
+			for (let i = 0; i < jsonObj.key4.length; i++) {
+				console.log(jsonObj.key4[i]);
+			}
+			console.log(jsonObj.key5.key5_1);
+			console.log(jsonObj.key5.key5_2);
+			console.log(jsonObj.key6);	//json对象数组
+			console.log(jsonObj.key6[0].key6_1_1);	//6611
+			console.log(jsonObj.key6[0].key6_1_2);	//key6_1_2_value
+			console.log(jsonObj.key6[1])	//{key6_2_1: 6621, key6_2_2: 'key6_2_2_value'}
+
+			// json对象转字符串
+			var jsonObjString = JSON.stringify(jsonObj);
+			console.log(jsonObjString);	//json字符串
+
+			// json字符串转json对象
+			let json = JSON.parse(jsonObjString);
+			console.log(json);		//json对象
+			console.log(json.key1);	//12
+			console.log(json.key2);	//abc
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/demo01tomcat/demo01tomcat.iml" filepath="$PROJECT_DIR$/demo01tomcat/demo01tomcat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo02Servlet/demo02Servlet.iml" filepath="$PROJECT_DIR$/demo02Servlet/demo02Servlet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo03jsp/demo03jsp.iml" filepath="$PROJECT_DIR$/demo03jsp/demo03jsp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo04cookiesession/demo04cookiesession.iml" filepath="$PROJECT_DIR$/demo04cookiesession/demo04cookiesession.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo05filter/demo05filter.iml" filepath="$PROJECT_DIR$/demo05filter/demo05filter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo06ajaxjson/demo06ajaxjson.iml" filepath="$PROJECT_DIR$/demo06ajaxjson/demo06ajaxjson.iml" />
+    </modules>
+  </component>
+</project>

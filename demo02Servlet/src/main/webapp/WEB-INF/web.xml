@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    <!--context-param是上下文参数，属于整个web工程-->
+    <context-param>
+        <param-name>username</param-name>
+        <param-value>root</param-value>
+    </context-param>
+    <context-param>
+        <param-name>password</param-name>
+        <param-value>123456</param-value>
+    </context-param>
+
+    <!--servlet标签给Tomcat配置Servlet程序-->
+    <servlet>
+        <!--给servlet程序起一个别名，一般是类名-->
+        <servlet-name>HelloServlet</servlet-name>
+        <!--servlet程序的全类名-->
+        <servlet-class>servlet.HelloServlet</servlet-class>
+        <init-param>
+            <!--是参数名-->
+            <param-name>username</param-name>
+            <!--是参数值-->
+            <param-value>root</param-value>
+        </init-param>
+        <init-param>
+            <!--是参数名-->
+            <param-name>url</param-name>
+            <!--是参数值-->
+            <param-value>jdbc:mysql/localhost:3306/test/</param-value>
+        </init-param>
+    </servlet>
+
+    <!--servlet-mapping标签给servlet程序配置访问地址-->
+    <servlet-mapping>
+        <!--servlet-name标签告诉服务器，当前配置的地址给哪个Servlet程序使用-->
+        <servlet-name>HelloServlet</servlet-name>
+        <!--url-pattern配置访问地址
+            /：斜杠在服务器解析的时，表示地址为：http://host:port/工程路径
+            /hello：表示地址为 http://host:port/工程路径/hello
+        -->
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>HelloServlet2</servlet-name>
+        <servlet-class>servlet.HelloServlet2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HelloServlet2</servlet-name>
+        <url-pattern>/hello2</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>HelloServlet3</servlet-name>
+        <servlet-class>servlet.HelloServlet3</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>HelloServlet3</servlet-name>
+        <url-pattern>/hello3</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ContextServlet</servlet-name>
+        <servlet-class>servlet.ContextServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ContextServlet</servlet-name>
+        <url-pattern>/contextServlet</url-pattern>
+    </servlet-mapping>
+</web-app>

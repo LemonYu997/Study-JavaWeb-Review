@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="pragma" content="no-cache" />
+		<meta http-equiv="cache-control" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			//使用js发起ajax请求，访问 /ajaxServlet
+			function ajaxRequest() {
+// 				1、创建XMLHttpRequest
+				let xmlHttpRequest = new XMLHttpRequest();
+// 				2、调用open方法设置请求参数
+				xmlHttpRequest.open("GET", "http://localhost:8080/ajaxServlet?action=jsAjax", true);
+
+// 				4、在send方法前绑定onreadystatechange事件，处理请求完成后的操作。
+				xmlHttpRequest.onreadystatechange = function () {
+					if (xmlHttpRequest.readyState === 4 && xmlHttpRequest.status === 200) {
+						console.log("收到服务器返回的数据：" + xmlHttpRequest.responseText)
+						//把响应数据显示到页面上
+						var jsonObj = JSON.parse(xmlHttpRequest.responseText);
+						document.getElementById("div01").innerHTML = "编号：" + jsonObj.id +
+								"，姓名：" + jsonObj.name;
+					}
+				}
+
+				//3、调用send方法发送请求
+				xmlHttpRequest.send();
+
+				alert("最后执行")
+			}
+		</script>
+	</head>
+	<body>	
+		<button onclick="ajaxRequest()">ajax request</button>
+		<div id="div01">
+		</div>
+	</body>
+</html>

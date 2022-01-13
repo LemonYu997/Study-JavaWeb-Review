@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="demo04cookiesession:war">
+    <output-path>$PROJECT_DIR$/demo04cookiesession/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>demo04cookiesession</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="demo04cookiesession-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="demo04cookiesession:war exploded" />
+    </root>
+  </artifact>
+</component>
